@@ -1,4 +1,4 @@
-tfrom telegram import (
+from telegram import (
     Update,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
