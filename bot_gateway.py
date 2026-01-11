@@ -1,4 +1,4 @@
-from telegram import (
+tfrom telegram import (
     Update,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -381,7 +381,10 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
-    Thread(target=lambda: app_web.run(host="0.0.0.0", port=3000)).start()
+    import os
+PORT = int(os.environ.get("PORT", 3000))
+Thread(target=lambda: app_web.run(host="0.0.0.0", port=PORT)).start()
+
     main()
 from telegram import (
     Update,
