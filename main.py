@@ -37,7 +37,7 @@ os.makedirs(ESTOQUE_DIR, exist_ok=True)
 os.makedirs(RESERVA_DIR, exist_ok=True)
 lock_estoque = threading.Lock()
 
-udef get_saldo(user_id):
+def get_saldo(user_id):
     cursor.execute("SELECT saldo FROM usuarios WHERE user_id=%s", (user_id,))
     r = cursor.fetchone()
     return float(r[0]) if r else 0.0
